@@ -9,9 +9,11 @@ using namespace std;
 
 void Solution::replace_space(char *str)
 {
+    //主要是边界问题
     int length = (int)strlen(str);
     int space = 0;
     int i = 0;
+    //先扫一遍看看空格的个数
     while (str[i] != '\0') {
         if (str[i] == ' ') {
             ++space;
@@ -20,6 +22,8 @@ void Solution::replace_space(char *str)
         }
         ++i;
     }
+    
+    //知道空格的个数最终字符串的长度就知道了
     char *p_array = new char[length + space * 2];
     p_array[length + space * 2 - 1] = '\0';
     int str_rear = length;
