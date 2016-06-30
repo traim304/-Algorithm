@@ -3,4 +3,9 @@
 
 #include <stdio.h>
 
+class Solution {
+public:
+    int fibonacci(int);
+};
+
 #endif /* Solution_hpp */
