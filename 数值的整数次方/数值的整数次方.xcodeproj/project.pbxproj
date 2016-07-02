@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		168B1B321D26B2A0002F078D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 168B1B311D26B2A0002F078D /* main.cpp */; };
+		168B1B3A1D2798F7002F078D /* Solution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 168B1B381D2798F7002F078D /* Solution.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		168B1B2E1D26B2A0002F078D /* 数值的整数次方 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "数值的整数次方"; sourceTree = BUILT_PRODUCTS_DIR; };
 		168B1B311D26B2A0002F078D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		168B1B381D2798F7002F078D /* Solution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solution.cpp; sourceTree = "<group>"; wrapsLines = 1; };
+		168B1B391D2798F7002F078D /* Solution.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Solution.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				168B1B311D26B2A0002F078D /* main.cpp */,
+				168B1B381D2798F7002F078D /* Solution.cpp */,
+				168B1B391D2798F7002F078D /* Solution.hpp */,
 			);
 			path = "数值的整数次方";
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168B1B3A1D2798F7002F078D /* Solution.cpp in Sources */,
 				168B1B321D26B2A0002F078D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
