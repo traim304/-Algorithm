@@ -13,8 +13,13 @@
 
 class Solution
 {
+    int* array;
+    int* tmp;
 public:
-    void re_order_array(int* array);
+    void order_odd_even(int *array, int size,int* tmp);
+    void order_with_merge_sort(int*array, int head, int tail,int* tmp);
+    void merge_odd_even(int* array, int head, int mid, int tail, int* tmp);
+    bool is_odd(int);
 };
 
 #endif /* Solution_hpp */
