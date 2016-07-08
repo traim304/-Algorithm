@@ -4,12 +4,30 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    bin_tree bt;
-    cout << "前序遍历: ";
-    bt.pre_order_traversal(bt.get_root());
-    cout << "中序遍历: ";
-    bt.in_order_traversal(bt.get_root());
-    cout << "中序遍历: ";
-    bt.post_order_traversal(bt.get_root());
+    cout << "初始化树 A: " << endl;
+    bin_tree a;
+    
+    cin.clear();
+    while (cin.get() != '\n') {
+        continue;
+    }
+    cout << "初始化树 B: " << endl;
+    bin_tree b;
+    
+    cin.clear();
+    while (cin.get() != '\n') {
+        continue;
+    }
+    
+    
+    //核心函数 is_b_in_a()
+    if (is_b_in_a(a, b)) {
+        cout << " 树 B 是 树 A 的子结构 " << endl;
+    }
+    else
+    {
+        cout << " 树 B 不是 树 A 的子结构 " << endl;
+    }
+    
     return 0;
 }

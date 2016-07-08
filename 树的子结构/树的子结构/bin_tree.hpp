@@ -11,6 +11,7 @@ struct bin_tree_node {
 
 
 
+
 class bin_tree
 {
     bin_tree_node* root;
@@ -23,6 +24,13 @@ public:
     void pre_order_traversal(bin_tree_node*);
     void in_order_traversal(bin_tree_node*);
     void post_order_traversal(bin_tree_node*);
+    
+    friend bool is_b_in_a(bin_tree& a, bin_tree& b);
+    bin_tree_node* locate_by_value(char root_data);
 };
+
+
+bool is_b_in_a(bin_tree& a, bin_tree& b);
+
 
 #endif /* bin_tree_hpp */
