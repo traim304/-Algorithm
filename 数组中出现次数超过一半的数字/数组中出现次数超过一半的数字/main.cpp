@@ -11,7 +11,7 @@ using namespace std;
 int find_partition(int array[], int all_number);
 int find_character(int array[], int all_number);
 int quick_sort(int*array, int head, int tail);      //返回的是基准数字的数组下标
-void quick_heart();
+
 
 int main(int argc, const char * argv[]) {
     cout << "总个数为: ";
@@ -35,6 +35,23 @@ int main(int argc, const char * argv[]) {
     }
     if (times > all_num/2) {
         cout << "超过数组长度一般的数字为: " << array[lots_of] << endl;
+    }
+    else
+    {
+        cout << "呵呵!! 并没有这个数."  << endl;
+    }
+    
+    //调用方法二
+    times = 0;
+    int value = find_character(array, 5);
+    for (int i = 0; i < all_num; i++) {
+        if (array[i] == array[lots_of]) {
+            times++;
+        }
+    }
+    
+    if (times > all_num/2) {
+        cout << "超过数组长度一般的数字为: " << value << endl;
     }
     else
     {
@@ -94,4 +111,26 @@ int quick_sort(int* array, int head, int tail)
     return flag;
 }
 
-
+//利用数组性质..
+//                      书上原话
+/*遍历一次数组,保存两个值,一个是数组中的一个数字,一个是次数,当我们遍历到下一个数字的时候,如果下一个数字和我们之前保存的数字相同,则次数加1;如果下一个数字个 我们之前保存的数字不同,则次数减1,如果次数为零,我们需要保存下一数字,并把次数设为1.由于我们要找的数字出现的数字比其他所有数字出现的次数之和还要多,那么要找的数字坑定是最后一次吧次数设为1是对应的数字*/
+int find_character(int array[], int all_number)
+{
+    int times = 1;
+    int times_of_value = array[0];
+    for (int i = 1; i < all_number-1; i++) {
+        if (times_of_value == array[i]) {
+            times++;
+        }
+        else
+        {
+            times--;
+            //当减到 0 时
+            if (times == 0) {
+                times_of_value = array[i];
+                times = 1;
+            }
+        }
+    }
+    return times_of_value;
+}
