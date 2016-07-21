@@ -8,7 +8,7 @@ using namespace std;
 //定义一个数组.放最小的四个数
 
 void find_smaller_quick(int* array,int size,int all_number);    //size 最小 N 个数,size = N
-int find_smaller_itrator(int*array,int size,int all_number);
+int* find_smaller_itrator(int*array,int size,int all_number,int* size_array);
 int quick_sort(int* array, int head, int tail);
 
 int main(int argc, const char * argv[]) {
@@ -25,13 +25,23 @@ int main(int argc, const char * argv[]) {
         cin >> array[i];
     }
     
-    //调用方法一函数
-    find_smaller_quick(array, size, all_number);
+//    //调用方法一函数
+//    find_smaller_quick(array, size, all_number);
+//    
+//    for (int i = 0; i < size; i++) {
+//        cout << array[i] << ' ';
+//    }
     
+     int* size_array = new int[size];
+    find_smaller_itrator(array, size, all_number,size_array);
+   
     for (int i = 0; i < size; i++) {
-        cout << array[i] << ' ';
+        cout << size_array[i] << ' ';
     }
     
+    
+    
+    delete[] array;
     return 0;
 }
 
@@ -94,5 +104,45 @@ int quick_sort(int* array, int head, int tail)
     return head;
 }
 
+//定义一个大小为 size 的数组.遍历一次数组,size数组存放的是最小的 n 个数
+int* find_smaller_itrator(int*array,int size,int all_number,int* size_array)
+{
+    //先进行初始化
 
+    for (int  i= 0; i < size; i++) {
+        size_array[i] = array[i];
+    }
+    
+    //对数组进行从小到大排序,因为 size 较小..这里直接冒泡
+    for (int i = 0; i < size-1; i++) {
+        for (int j =0; j < size-i-1; j++) {
+            if (size_array[j] > size_array[j+1]) {
+                size_array[j] = size_array[j] ^ size_array[j+1];
+                size_array[j+1] = size_array[j] ^ size_array[j+1];
+                size_array[j] = size_array[j] ^ size_array[j+1];
+            }
+        }
+        
+    }
+    
+    cout << "mao pao pai xu hou : " ;
+    
+    for (int i = 0; i < size; i++) {
+        cout << size_array[i] << ' ';
+    }
+    cout << endl;
+    
+    for (int i = size; i < all_number; i++) {
+    int tmp_size_flag = size -2;
+    if (size_array[size-1] > array[i]) {
+            while (tmp_size_flag >= 0 && size_array[tmp_size_flag] > array[i]) {
+                size_array[tmp_size_flag+1] = size_array[tmp_size_flag];
+                tmp_size_flag--;
+            }
+        size_array[tmp_size_flag +1] = array[i];
 
+    }
+}
+    
+    return nullptr;
+}
